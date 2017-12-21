@@ -1,37 +1,26 @@
-! twave.F90 -- Shivam Garg, 12/18/2017 --
 !
-!			This program requires three double precision inputs ('tval', 'c', and 'L').
-!			These variables are used to shift the function values using the formula:
-!				xmct = x-c*tval, over the interval of [0,L].
-!				xpct = x+c*tval, over the interval of [0,L].
+! File name: twave.F90
+! Author: Pradeep Singh
+! Date: 11/6/17
+! Description:
+!             This program takes in three command line  arguments and outputs a snapshot
+!             of a function that has been shifted by "c*tval". The three arguments are, "tval",
+!             "c", "L". The program takes these values, calculates the shifted y value, and prints
+!             it out into a file "data.t" in two columns. This is repeated for a hard set number of
+!             GRIDPOINTS  along the domain [0, L], with each new pair of points being a new
+!             line in data.t. The user can then take this data.t file and use GNUPLOT to
+!             plot the data.
 !
-!			The program twave calls external function 'funval' which choses FUNCHOICE 
-!			to operate on the values (i.e. xmct and xpct). The funval file is located 
-!			inside /usr/local/apache/cgi-bin/garg/waveqn/ folder.
+!              Compilation:
 !
-!			The FUNCHOICE is modified in the driver.cgi file which is located inside 
-!			/usr/local/apache/cgi-bin/garg/waveqn/ folder.
-!			To run the twave.F90 program, driver.cgi follows these commands:
-!				gfortran -DFUNCHOICE=sine -DEXTEND=0 -o ./results/twave twave.F90 funval.F90
-!				./twave tval c L
+!                        # Change the flag -DFUNCHOICE to dsin for a double precision float sine
+!                        # function or dcos for a similar cosine function.
+!                        $ gfortran -DFUNCHOICE=dsin -DEXTEND=0 -o twave.F90 funval.F90
 !
-!			twave.F90 can also be run independently if above two commands are typed on 
-!			the console.
-
-!			Currently, twave.F90 supports three different types of function: sine, 
-!			gaussian, and cubic. For gaussian and cubic functions, use -DEXTEND=1.
-!				gfortran -DFUNCHOICE=gaussian -DEXTEND=1 -o ./results/twave twave.F90 funval.F90
+!              Usage:
 !
-!			The output of this program is stored in the 'data.t' file which can also be
-!			found in the /usr/local/apache/cgi-bin/garg/waveqn/ folder. This file contains 
-!			150 GRIDPOINTS and their corresponding values obtained by operating FUNCHOICE 
-!			function on those GRIDPOINTS. 
-!			One can plot these points using gnuplot by following these instructions:
-!				gnuplot
-!				plot 'data.t' w lines
-!
-!			See also	o driver.cgi
-!					o funval.F90
+!                        # tval, C, and L are double precision numbers.
+!                        $ ./twave tval c L
 !
 !----------------------------------------------------------------------------------------------
 
