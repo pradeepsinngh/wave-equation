@@ -1,6 +1,13 @@
-#! /usr/bin/perl
+#!/usr/bin/env perl
+#
+# File name: driver.cgi
+# Date: 12/18/2017
+# Author: Pradeep Singh
+# Description: The program "driver.cgi" run twave for various time values, generating a sequence of
+#              snapshots in gnuplot format and then runs gnuplot on each of these snapshots to generate
+#              an png format image for corresponding snapshots. Finally, it runs the convert command
+#              to make a gif of all images.
 
-# 12/18/17 -- Shivam Garg, driver.cgi
 
 #To make html text compatiable
 print "Content-type: text/html; charset=iso-8859-1", "\n\n";
