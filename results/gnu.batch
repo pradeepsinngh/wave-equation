@@ -1,0 +1,28 @@
+#18/12/17--Shivam Garg--gnu.batch.template
+#
+#		This gnuplot file has a template which is used by 
+#		driver.cgi file to convert the data.t file (created
+#		by twave.F90) into a GNU plot and save it as wave.png.
+#		
+#		This file can be run seperately also on the command 
+#		line by typing:
+#			$gnuplot gnu.batch
+#
+#		See also: driver.cgi
+
+#Setting X and Y axis
+set xrange [0.0:6]
+set yrange [-2*1:2*1]
+set xzeroaxis linetype 3
+set yzeroaxis linetype 3
+
+set terminal png
+
+#Ouput file
+set output "wave.png"
+
+#Setting labels for axis
+set xlabel "x"
+set ylabel "gaussian function"
+
+plot "./results/data.t" title "u(x,t) for gaussian with L = 6, Alpha = 1, Beta = 2, and Sigma = 5" w lines
