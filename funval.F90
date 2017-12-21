@@ -1,15 +1,14 @@
-! funval() -- James Otto, 12/14/17 Ver 2.0 -- function for the extension 
-! of the displacement function in the wave equation outside the interval 
-! [0,L] --> [-2L,3L] facilitating the use of the d'Alembert formula for a 
-! full time period -- t in [0,2L/c]
+! File name: funval.F90
+! Date: 12/18/2017
+! Description:
+!            funval() function for the extension of the displacement function in the
+!            wave equation outside the interval [0,L] --> [-2L,3L] facilitating the
+!            use of the d'Alembert formula for a full time period, t in [0,2L/c]
 !
-!  we assume,
-!   o FUNCHOICE(x) works for x in [0,L] 
-!   o zz (1st param to funval()) in [-2L,3L]
-!   o LL (2nd param to funval()) equals L
-
-! this version avoids an earlier bug related to F90 pass-by-reference
-! by copying the input param to a work variable ww and mapping the latter...
+!           we assume,
+!              o FUNCHOICE(x) works for x in [0,L]
+!              o zz (1st param to funval()) in [-2L,3L]
+!              o LL (2nd param to funval()) equals L
 
         double precision function funval(zz,LL) !map zz to [0,L] and call base fn
         implicit none
