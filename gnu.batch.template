@@ -1,14 +1,13 @@
-#18/12/17--Shivam Garg--gnu.batch.template
 #
-#		This gnuplot file has a template which is used by 
-#		driver.cgi file to convert the data.t file (created
-#		by twave.F90) into a GNU plot and save it as wave.png.
+# File name: gnu.batch.template
+# Author: Pradeep Singh
+# Date: 12/18/2017
+#	 Description: This gnuplot file has a template which is used by 
+#		            driver.cgi file to convert the data.t file (created
+#		            by twave.F90) into a GNU plot and save it as wave.png.
 #		
-#		This file can be run seperately also on the command 
-#		line by typing:
-#			$gnuplot gnu.batch
-#
-#		See also: driver.cgi
+#		           To run,
+#			         $gnuplot gnu.batch
 
 #Setting X and Y axis
 set xrange [XRANGE]
