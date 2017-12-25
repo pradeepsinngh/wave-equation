@@ -1,1 +1,1 @@
-# waveqn
+# wave equation
