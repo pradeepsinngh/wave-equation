@@ -162,3 +162,4 @@ double precision function cubic(xx)
 	yy = xx*(xx-delta)*(xx-L);
 	
 	end function cubic	!Closing the function cubic
+	
