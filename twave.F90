@@ -26,6 +26,7 @@
 
 !Starting program twave which expects three (double precision type) inputs from the user through 
 !the command line. This program writes the float values in the 'data.t' file.
+
 program twave
 	implicit none
 	
